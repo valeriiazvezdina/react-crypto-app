@@ -1,17 +1,11 @@
 import React from 'react';
-import { Layout } from 'antd';
-import AppHeader from './components/AppHeader';
-import AppContent from './components/AppContent';
-import AppSider from './components/AppSider';
+import { CryptoContextProvider } from './context/crypto-context.jsx';
+import AppLayout from './components/layout/AppLayout.jsx';
 
 export default function App() {
     return (
-        <Layout>
-            <AppHeader />
-            <Layout>
-                <AppSider />
-                <AppContent />
-            </Layout>
-        </Layout>
+        <CryptoContextProvider>
+            <AppLayout />
+        </CryptoContextProvider>
     )
 }

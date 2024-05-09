@@ -1,7 +1,6 @@
 import { Layout, Card, Statistic, List, Typography, Tag } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { capitalize } from '../../utils/capitalize.js';
-import { useContext } from 'react';
 import { useCrypto } from '../../context/crypto-context.jsx';
 
 const siderStyle = {

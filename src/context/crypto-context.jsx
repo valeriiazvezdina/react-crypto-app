@@ -21,6 +21,7 @@ export function CryptoContextProvider({ children }) {
                 growPercent: percentDiff(asset.price, coin.price),
                 totalAmount: asset.amount * coin.price,
                 totalProfit: (asset.amount * coin.price - asset.amount * asset.price).toFixed(2),
+                name: coin.name,
                 ...asset
             }
         });

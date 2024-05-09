@@ -1,15 +1,14 @@
 import { Layout, Card, Statistic, List, Typography, Tag } from 'antd';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { capitalize } from '../../utils/capitalize.js';
-import { useContext } from 'react';
-import CryptoContext from '../../context/crypto-context.jsx';
+import { useCrypto } from '../../context/crypto-context.jsx';
 
 const siderStyle = {
     padding: '1rem'
 };
 
 export default function AppSider() {
-    const { assets } = useContext(CryptoContext);
+    const { assets } = useCrypto();
 
     return (
         <Layout.Sider width="25%" style={siderStyle}>

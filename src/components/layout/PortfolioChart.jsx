@@ -41,7 +41,6 @@ export default function PortfolioChart() {
             justifyContent: 'center',
             height: 400
         }}>
-            <div>Portfolio Chart</div>
             <Pie data={data} />
         </div>
 

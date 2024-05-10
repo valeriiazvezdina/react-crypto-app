@@ -1,4 +1,5 @@
-import { Flex, Typography, Tag, Divider } from 'antd';
+import { Typography, Tag, Divider, Flex, Button } from 'antd';
+import { TwitterOutlined, RedditOutlined } from '@ant-design/icons';
 import CoinInfo from './CoinInfo';
 
 export default function CoinInfoModal({ coin }) {
@@ -9,13 +10,13 @@ export default function CoinInfoModal({ coin }) {
             <Divider />
 
             <Typography.Paragraph>
-                <Typography.Text strong>1 day: </Typography.Text>
+                <Typography.Text strong>1 hour: </Typography.Text>
                 <Tag color={coin.priceChange1h > 0 ? 'green' : 'red'}>{coin.priceChange1h}%</Tag>
 
-                <Typography.Text strong>1 week: </Typography.Text>
+                <Typography.Text strong>1 day: </Typography.Text>
                 <Tag color={coin.priceChange1d > 0 ? 'green' : 'red'}>{coin.priceChange1d}%</Tag>
 
-                <Typography.Text strong>1 hour: </Typography.Text>
+                <Typography.Text strong>1 week: </Typography.Text>
                 <Tag color={coin.priceChange1w > 0 ? 'green' : 'red'}>{coin.priceChange1w}%</Tag>
             </Typography.Paragraph>
 
@@ -42,7 +43,21 @@ export default function CoinInfoModal({ coin }) {
                 </Typography.Paragraph>
             }
 
-            {/* TODO: add icon links to social media of coins */}
+            <Typography.Paragraph>
+                <Typography.Text strong>Website: </Typography.Text>
+                <Typography.Link href={coin.websiteUrl} target='_blank'>{coin.websiteUrl}</Typography.Link>
+            </Typography.Paragraph>
+
+            <Flex align='center' justify='space-around'>
+
+                <Button type='link' href={coin.twitterUrl} target='_blank'>
+                    <TwitterOutlined style={{ fontSize: '30px' }} />
+                </Button>
+
+                <Button type='link' href={coin.redditUrl} target='_blank'>
+                    <RedditOutlined style={{ fontSize: '30px' }} />
+                </Button>
+            </Flex>
         </>
     );
 }

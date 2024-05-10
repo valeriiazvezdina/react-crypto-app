@@ -1,5 +1,5 @@
 import { Layout, Card, Statistic, List, Typography, Tag } from 'antd';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import { ArrowDownOutlined, ArrowUpOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { capitalize } from '../../utils/capitalize.js';
 import { useCrypto } from '../../context/crypto-context.jsx';
 
@@ -10,10 +10,25 @@ const siderStyle = {
 export default function AppSider() {
     const { assets } = useCrypto();
 
+    function handleEdit(values) {
+        console.log(values)
+    }
+
+    function handleDelete(values) {
+        console.log(values)
+    }
+
     return (
         <Layout.Sider width="25%" style={siderStyle}>
             {assets.map(asset => (
-                <Card key={asset.id} style={{ marginBottom: '1rem' }}>
+                <Card
+                    key={asset.id}
+                    style={{ marginBottom: '1rem' }}
+                    actions={[
+                        <EditOutlined key="edit" onClick={handleEdit} />,
+                        <DeleteOutlined key="delete" onClick={handleDelete} />,
+                    ]}
+                >
                     <Statistic
                         title={capitalize(asset.id)}
                         value={asset.totalAmount}

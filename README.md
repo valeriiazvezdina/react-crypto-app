@@ -11,7 +11,10 @@ First of all, clone the repo to your local computer:
 ```
 git clone git@github.com:valeriiazvezdina/react-crypto-app.git
 ```
-
+Don't forget to install all dependencies:
+```
+npm install
+```
 ## Running app
 
 1. It is necessary to configure `.env` file using `.env_example` file.
